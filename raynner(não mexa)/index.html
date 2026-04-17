@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="aula.js"></script>
+</head>
+<body>
+    <h2>Calculadora de INSS (2026)</h2>
+     <label>Salário Bruto (R$):</label>
+     <input type="number" id="salarioBruto" placeholder="Ex: 3000">
+     <button onclick="calcularSalario()">Calcular</button>
+     <div id="resultado" style="margin-top: 20px">
+        <p id="resDesconto"></p>
+        <p id="resLiquido"></p>
+     </div>
+    <hr><h2>Verificador de Idade</h2>
+    <input type="number" id="inputIdade" placeholder="Digite sua idade">
+    <button onclick="verificarIdade()">verificar</button>
+    <p id="resIdade"></p>
+
+    <hr><h2>Cadastro de Usuário</h2>
+    <input type="text" id="nome"  placeholder="Nome"><br><br>
+    <input type="email"  id="email" placeholder="Email"><br><br>
+    <input type="password" id="senha" placeholder="Senha"><br><br>
+    <input type="password" id="confirmarSenha" placeholder="Confirmar Senha"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <p id="mensagem"></p>
+
+     <hr><h2>Limpar</h2>
+    <button onclick="limparCampos()">Limpar</button>
+
+</body>
+</html>
