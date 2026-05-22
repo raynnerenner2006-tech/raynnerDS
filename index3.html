@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="aula3.js"></script>
+</head>
+<body>
+    <h2>** Sistema de Compras **</h2>
+<h3>Menu:</h3>
+<ul>
+    <li>1 - Camiseta</li>
+    <li>2 - Calça</li>
+    <li>3 - Tênis</li>
+</ul>
+<label>Digite o código do produto:</label>
+<input type="number" id="produto" min="1" max="3"> <br> <br>
+<label>Digite a quantidade:</label>
+<input type="number" id="quantidade" min="1" max="10"> <br> <br>
+<button onclick="verificarProduto()">Calcular</button> <br>
+<textarea type="text" id="resultadoProduto" rows="5" disabled> </textarea> <hr>
+<div id="resultadoProduto2"></div>
+
+ <h2>Sistema de COMPRAS</h2>
+    <p>Menu</p>
+    1 - Hambúrguer <br> 
+    2 - Pizza <br>
+    3 - Refrigerante <br><br>
+    Código do produto:
+    <input type="number" id="produto"><br><br>
+    Quantidade:
+    <input type="number" id="quantidade"><br><br>
+    <button onclick="calcular()">Calcular</button>
+    <h3 id="resultado2"></h3>
+</body>
+</html>
+
