@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>cadastre a senha</h2>
+    <input type="text" id="senha">
+    <button onclick="validar()">cadastra</button>
+    <h2 id="msg"></h2>
+    <h2 id="cont"></h2>
+
+    <script>
+        function validar() {
+            let senha = document.getElementById("senha").value;
+            let msg = "";
+            do {
+                if (senha.length < 6) {
+                    document.getElementById("msg").innerHTML="senha invalida";
+                    document.getElementById("senha").value="";
+                    return;
+                }
+            } while (senha.length < 6);
+            document.getElementById("msg").innerHTML="cadastrada com sucesso";
+        }
+    </script>
+
+</body>
+
+</html>

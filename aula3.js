@@ -87,3 +87,11 @@ function calcular(){
     document.getElementById("resultado2").innerHTML = "Produto: " + nome + "<br>" + "Quantidade: " + quantidade + "<br>" +
     "Total: R$ " + total.toFixed(2) + "<br>" + mensagem;
 }
+function gerarAleatorio(){
+    let x = Number(Math.floor(Math.random() * 100));
+    document.getElementById("random").value = x;
+}
+function pontecia(){
+    let base = Number(document.getElementById("Base").value);
+    let expoente = Number
+}

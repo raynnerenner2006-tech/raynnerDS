@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Exibir contador</h3>
+    Mensagem <input type="text" id="mensagem">
+    <button onclick="contar()">Contar</button>
+    <h3 id="resposta"></h3>
+
+    <h2>Sistema de Vendas</h2>
+    Quantidade de vendas:
+    <input type="number" id="qtd">
+    <button onclick="vendas()">Mostrar</button>
+    <h3 id="res1"></h3>
+
+    <h2>Lista de Compras</h2>
+    Digite um item:
+    <input type="text" id="item">
+    <button onclick="adicionar()">Adicionar</button>
+    <h3 id="resultado"></h3>
+
+    <h2>LISTA DE COMPRAS</h2>
+    <input type="text" id="item2">
+    <button onclick="adicionar2()">ADICIONAR</button>
+    <button onclick="excluir()">EXCLUIR ÚLTIMO</button>
+    <h3 id="resultado2"></h3>
+
+<script>
+    function contar() {
+        let i = 1;
+        let texto = "";
+        do {
+            texto += document.getElementById("mensagem").value + "<br>";
+            i++;
+        } while (i <= 10);
+
+        document.getElementById("resposta").innerHTML = texto;
+    }
+    function vendas() {
+    let qtd = Number(document.getElementById("qtd").value);
+    let texto = "";
+    for (let i = 1; i <= qtd; i++) {
+        texto += "Venda nº" + i + " realizada!<br>";
+    }
+    document.getElementById("res1").innerHTML = texto;
+} 
+
+let lista = [];
+
+function adicionar() {
+    let item = document.getElementById("item").value;
+    lista.push(item);
+    document.getElementById("resultado").innerHTML = lista;
+}
+function mostrarLista(){
+    let texto = "";
+    for (let i = 0; i < lista.length; i++) {
+        texto += lista[i] + "<br>";
+    }
+    document.getElementById("resultado2").innerHTML = texto;
+}
+function adicionar(){
+    let item = document.getElementById("item").value;
+    lista.push(item);
+    mostrarLista();
+}
+function excluir(){
+    lista.pop();
+    mostrarLista();
+}
+
+</script>     
+
+</body>
+</html>

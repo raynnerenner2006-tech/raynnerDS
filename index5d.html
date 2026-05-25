@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>Controle de Gastos</h1>
+        <input type="number" id="valor" placeholder="Digite o valor do gasto">
+        <select id="categoria">
+            <option>Alimentação</option>
+            <option>Transporte</option>
+            <option>Lazer</option>
+            <option>Estudos</option>
+            <option>Outros</option>
+        </select>
+
+        <button onclick="adicionarGasto()"> Adicionar Gasto </button>
+        <div id="lista">
+            <h3>Gastos Registrados</h3>
+        </div>
+        <h2 id="total"> Total: R$ 0.00 </h2>
+            <h3 id="mensagem"></h3>
+    </main>
+
+    <script>
+        let gastos = [];
+        function adicionarGasto() {
+            let valor = Number(document.getElementById("valor").value);
+            let categoria = document.getElementById("categoria")
+            if (valor <= 0) {
+                alert("Digite um valor válido");
+                return;
+            }
+            gastos.push(valor);
+            document.getElementById("lista").innerHTML += "<p>" + categoria + " - R$" + valor.toFixed(2) + "</p>";
+            let total = gastos[0];
+            for (let i = 1; i < gastos.length; i++) {
+                total = total + gastos[i];
+            }
+            document.getElementById("total").innerHTML = "Total: R$ " + total.toFixed(2);
+            if (total > 200) {
+                document.getElementById("mensagem").innerHTML = "Atenção! Você ultrapassou R$ 200";
+            } 
+
+            else {
+                document.get("mensagem").innerHTML = "Gastos dentro do limite";
+            }
+            document.getElementById("valor").value = "";
+        }
+    </script>
+    <style>
+        :root {
+            --red: #D40A0A;
+            --yellow: #F4DD0C;
+            --black: #000000;
+        }
+
+        body {
+            background: var(--red);
+            font-family: Arial;
+            text-align: center;
+            padding: 30px;
+        }
+
+        main {
+            background: var(--black);
+            width: 350px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: var(--yellow);
+        }
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 8px;
+            border: 1px solid var(--yellow);
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        select {
+            width: 97%;
+            padding: 12px;
+            margin: 8px;
+            border: 1px solid var(--yellow);
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        button{
+            background: var(#D40A0A);
+            color:white;
+            border: none;
+            width: 97%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        button:hover {
+            cursor: pointer;
+            opacity: 0.9;
+        }
+        #lista {
+            background: #000000;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        #total {
+            background: var(--red);
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        #mensagem {
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--yellow);
+        }
+        p {
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</body>
+</html>
