@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleleitohospitalar.css">
+    <script src="leitohospitalar.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>HOSPITAL CLÓVIS CORREA</h1>
+    </header>
+    <main>
+
+        <h2>Controle de Leitos</h2>
+        <input type="text" id="nomePaciente" placeholder=" &#128100; Inserir nome do paciente">
+        
+        <p id="mensagem"></p>
+        <p id="mensagem2"></p>
+
+        <button id="ocupar" onclick="ocuparLeito()">Ocupar</button>
+
+        <button id="liberar" onclick="liberarLeito()">Liberar</button><br>
+        <span id="reticencias"></span></p>
+        <h3 id="check">Exibir lista de pacientes</h3>
+        <button class="btn-lista" id="exibir" onclick="exibirPacientes()">mostrar</button>
+        <button class="btn-lista" id="ocutar" onclick="ocutarPacientes()">fechar</button>
+        <ol id="exibirLista"></ol>
+        <h2 id="resultado">0 Leitos ocupados</h2>
+        <h2 id="leitosLivres"></h2>
+
+        <p id="zerar"></p>
+
+    </main>
+</body>
+
+</html>
